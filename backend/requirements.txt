@@ -1,0 +1,9 @@
+tensorflow
+librosa
+numpy
+pandas
+scikit-learn
+matplotlib
+fastapi
+uvicorn
+python-multipart

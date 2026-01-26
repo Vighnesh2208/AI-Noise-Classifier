@@ -1,0 +1,41 @@
+# ✅ Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# ✅ Virtual environment
+venv/
+.env
+
+# ✅ Model + training outputs (optional)
+*.h5
+*.keras
+*.ckpt
+*.pb
+saved_model/
+
+# ✅ Numpy arrays / extracted datasets
+*.npy
+
+# ✅ Dataset folder (BIG)
+UrbanSound8K/
+
+# ✅ Temporary audio files
+temp_audio.wav
+*.wav
+*.mp3
+*.flac
+*.ogg
+*.m4a
+
+# ✅ Logs
+*.log
+
+# ✅ OS files
+.DS_Store
+Thumbs.db
+
+# ✅ IDE configs
+.vscode/
+.idea/
