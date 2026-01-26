@@ -4,9 +4,9 @@ This project is an **AI Noise Classifier Backend** built using **Python + Tensor
 
 It takes an audio input (upload), predicts the sound type using a CNN model trained on the **UrbanSound8K** dataset, and then tells whether the sound is **Harmful or Not Harmful** using **Option A (rule-based harmful mapping)**.
 
----
 
-## ✅ Features
+
+✅ Features
 
 - Upload audio file (`.wav`, `.mp3`, etc.)
 - MFCC feature extraction using Librosa
@@ -20,14 +20,13 @@ It takes an audio input (upload), predicts the sound type using a CNN model trai
 
 
 
-## ✅ Setup Instructions
+✅ Setup Instructions
 
-### 1️⃣ Create and activate virtual environment
+1️⃣ Create and activate virtual environment
+Windows
 
- Windows
-```
-python -m venv venv
-venv\Scripts\activate```
+`python -m venv venv`
+`venv\Scripts\activate`
 
 Install Dependencies
 ```pip install -r requirements.txt```
@@ -91,28 +90,33 @@ You can change the API key inside api.py.
 
 Go to:
 
-http://127.0.0.1:8000/docs
+`http://127.0.0.1:8000/docs`
 
 
 Then use /predict endpoint and upload a sound file.
 
 Make sure to send the header:
 
-x-api-key: YASH123456
+`x-api-key: YASH123456`
 
 ✅ Using curl (Terminal)
 Mac/Linux
-```curl -X POST "http://127.0.0.1:8000/predict" \
+```python
+curl -X POST "http://127.0.0.1:8000/predict" \
   -H "x-api-key: YASH123456" \
-  -F "file=@test.wav"```
+  -F "file=@test.wav"
+```
 
 Windows (CMD)
-```curl -X POST "http://127.0.0.1:8000/predict" ^
+```python
+curl -X POST "http://127.0.0.1:8000/predict" ^
   -H "x-api-key: YASH123456" ^
-  -F "file=@test.wav"```
+  -F "file=@test.wav"
+  ```
 
 ✅ Example API Response
-```{
+```JSON
+{
   "predicted_class": "siren",
   "confidence": 91.23,
   "harmful": true
