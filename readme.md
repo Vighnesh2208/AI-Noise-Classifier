@@ -18,13 +18,13 @@ It takes an audio input (upload), predicts the sound type using a CNN model trai
 
 
 
----
+
 
 ## ✅ Setup Instructions
 
 ### 1️⃣ Create and activate virtual environment
 
-#### Windows
+ Windows
 ```
 python -m venv venv
 venv\Scripts\activate```
