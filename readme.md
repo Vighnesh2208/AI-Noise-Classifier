@@ -120,7 +120,8 @@ curl -X POST "http://127.0.0.1:8000/predict" ^
   "predicted_class": "siren",
   "confidence": 91.23,
   "harmful": true
-}```
+}
+```
 
 ✅ Harmful vs Not Harmful (Option A)
 
