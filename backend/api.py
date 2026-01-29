@@ -1,9 +1,18 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException, Header
+from fastapi.middleware.cors import CORSMiddleware
 import numpy as np
 import librosa
 import tensorflow as tf
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # ✅ API KEY (set your own)
 API_KEY = "YASH123456"

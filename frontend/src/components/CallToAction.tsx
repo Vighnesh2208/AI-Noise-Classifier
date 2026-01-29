@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const CallToAction = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-24 px-4">
       <div className="max-w-4xl mx-auto">
@@ -13,14 +16,13 @@ const CallToAction = () => {
           
           <div className="relative z-10">
             <h2 className="text-3xl md:text-5xl font-bold font-display mb-6">
-              Protect Your Hearing <span className="text-gradient">Today</span>
+              {t("cta.title.prefix")} <span className="text-gradient">{t("cta.title.emphasis")}</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-8">
-              Start analyzing sounds for free. No signup required. 
-              Your hearing health is just one click away.
+              {t("cta.subtitle")}
             </p>
             <Button size="lg" className="bg-gradient-primary text-primary-foreground hover:opacity-90 transition-opacity shadow-glow px-8 py-6 text-lg font-semibold group">
-              Get Started Free
+              {t("cta.button")}
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>

@@ -1,16 +1,19 @@
 import { ShieldCheck, ShieldAlert } from "lucide-react";
 import SoundWave from "./SoundWave";
+import { useTranslation } from "react-i18next";
 
 const DemoPreview = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-24 px-4">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold font-display mb-4">
-            See It In <span className="text-gradient">Action</span>
+            {t("demo.title.prefix")} <span className="text-gradient">{t("demo.title.emphasis")}</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Real-time classification with clear, actionable results.
+            {t("demo.subtitle")}
           </p>
         </div>
 
@@ -22,8 +25,8 @@ const DemoPreview = () => {
                 <ShieldCheck className="w-6 h-6 text-safe" />
               </div>
               <div>
-                <h3 className="font-semibold font-display text-lg">Safe Sound</h3>
-                <p className="text-sm text-muted-foreground">65 dB - Normal conversation</p>
+                <h3 className="font-semibold font-display text-lg">{t("demo.safe.title")}</h3>
+                <p className="text-sm text-muted-foreground">{t("demo.safe.subtitle")}</p>
               </div>
             </div>
             
@@ -31,14 +34,14 @@ const DemoPreview = () => {
             
             <div className="space-y-3">
               <div className="flex justify-between text-sm">
-                <span className="text-muted-foreground">Risk Level</span>
-                <span className="text-safe font-medium">Low</span>
+                <span className="text-muted-foreground">{t("demo.safe.riskLevel")}</span>
+                <span className="text-safe font-medium">{t("demo.safe.riskValue")}</span>
               </div>
               <div className="h-2 bg-muted rounded-full overflow-hidden">
                 <div className="h-full w-1/4 bg-safe rounded-full" />
               </div>
               <p className="text-xs text-muted-foreground">
-                Safe for extended exposure. No hearing protection required.
+                {t("demo.safe.description")}
               </p>
             </div>
           </div>
@@ -50,8 +53,8 @@ const DemoPreview = () => {
                 <ShieldAlert className="w-6 h-6 text-harmful" />
               </div>
               <div>
-                <h3 className="font-semibold font-display text-lg">Harmful Sound</h3>
-                <p className="text-sm text-muted-foreground">95 dB - Power tools</p>
+                <h3 className="font-semibold font-display text-lg">{t("demo.harmful.title")}</h3>
+                <p className="text-sm text-muted-foreground">{t("demo.harmful.subtitle")}</p>
               </div>
             </div>
             
@@ -59,14 +62,14 @@ const DemoPreview = () => {
             
             <div className="space-y-3">
               <div className="flex justify-between text-sm">
-                <span className="text-muted-foreground">Risk Level</span>
-                <span className="text-harmful font-medium">High</span>
+                <span className="text-muted-foreground">{t("demo.harmful.riskLevel")}</span>
+                <span className="text-harmful font-medium">{t("demo.harmful.riskValue")}</span>
               </div>
               <div className="h-2 bg-muted rounded-full overflow-hidden">
                 <div className="h-full w-3/4 bg-harmful rounded-full" />
               </div>
               <p className="text-xs text-muted-foreground">
-                ⚠️ Hearing protection recommended. Limit exposure to 15 minutes.
+                {t("demo.harmful.description")}
               </p>
             </div>
           </div>

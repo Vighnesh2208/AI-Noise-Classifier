@@ -1,36 +1,39 @@
 import { Mic, Brain, ShieldCheck } from "lucide-react";
-
-const steps = [
-  {
-    icon: Mic,
-    title: "Capture Sound",
-    description: "Record audio from your microphone or upload an existing audio file for analysis.",
-    step: "01",
-  },
-  {
-    icon: Brain,
-    title: "AI Analysis",
-    description: "Our advanced neural network processes the audio, identifying patterns and frequencies.",
-    step: "02",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Get Results",
-    description: "Receive instant feedback on whether the sound is potentially harmful to your hearing.",
-    step: "03",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const HowItWorks = () => {
+  const { t } = useTranslation();
+
+  const steps = [
+    {
+      icon: Mic,
+      titleKey: "how.steps.capture.title",
+      descriptionKey: "how.steps.capture.description",
+      step: "01",
+    },
+    {
+      icon: Brain,
+      titleKey: "how.steps.analysis.title",
+      descriptionKey: "how.steps.analysis.description",
+      step: "02",
+    },
+    {
+      icon: ShieldCheck,
+      titleKey: "how.steps.results.title",
+      descriptionKey: "how.steps.results.description",
+      step: "03",
+    },
+  ] as const;
+
   return (
     <section className="py-24 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold font-display mb-4">
-            How It <span className="text-gradient">Works</span>
+            {t("how.title.prefix")} <span className="text-gradient">{t("how.title.emphasis")}</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Three simple steps to protect your hearing with our AI-powered noise classifier.
+            {t("how.subtitle")}
           </p>
         </div>
 
@@ -56,8 +59,8 @@ const HowItWorks = () => {
                   <step.icon className="w-7 h-7 text-primary-foreground" />
                 </div>
 
-                <h3 className="text-xl font-semibold font-display mb-3">{step.title}</h3>
-                <p className="text-muted-foreground">{step.description}</p>
+                <h3 className="text-xl font-semibold font-display mb-3">{t(step.titleKey)}</h3>
+                <p className="text-muted-foreground">{t(step.descriptionKey)}</p>
               </div>
             </div>
           ))}

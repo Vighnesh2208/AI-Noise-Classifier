@@ -1,6 +1,9 @@
 import { Volume2, Github, Twitter } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="py-12 px-4 border-t border-border/50">
       <div className="max-w-6xl mx-auto">
@@ -15,9 +18,9 @@ const Footer = () => {
 
           {/* Links */}
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">Privacy</a>
-            <a href="#" className="hover:text-foreground transition-colors">Terms</a>
-            <a href="#" className="hover:text-foreground transition-colors">Contact</a>
+            <a href="#" className="hover:text-foreground transition-colors">{t("footer.privacy")}</a>
+            <a href="#" className="hover:text-foreground transition-colors">{t("footer.terms")}</a>
+            <a href="#" className="hover:text-foreground transition-colors">{t("footer.contact")}</a>
           </div>
 
           {/* Social */}
@@ -32,7 +35,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-8 pt-8 border-t border-border/30 text-center text-sm text-muted-foreground">
-          © 2024 SoundGuard. Protect your hearing with AI.
+          {t("footer.copyright")}
         </div>
       </div>
     </footer>
