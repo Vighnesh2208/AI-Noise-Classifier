@@ -76,8 +76,20 @@ async def predict(file: UploadFile = File(...), x_api_key: str = Header(None)):
     label = CLASS_LABELS[predicted_class]
     harmful = label in HARMFUL_CLASSES
 
+
     return {
         "predicted_class": label,
         "confidence": round(confidence * 100, 2),
         "harmful": harmful
     }
+
+from pydantic import BaseModel
+
+class LocationData(BaseModel):
+    latitude: float
+    longitude: float
+
+@app.post("/location")
+async def receive_location(data: LocationData):
+    print(f"Received Location -> Latitude: {data.latitude}, Longitude: {data.longitude}")
+    return {"status": "success", "received": data}

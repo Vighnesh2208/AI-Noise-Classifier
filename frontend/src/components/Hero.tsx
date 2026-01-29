@@ -29,6 +29,23 @@ const Hero = () => {
         title: t("hero.toast.doneTitle"),
         description: `${prediction.predicted_class} (${prediction.confidence.toFixed(2)}% confidence)`,
       });
+
+      // Send location automatically
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const { latitude, longitude } = position.coords;
+            // Importing sendLocation here to avoid circular dependency if it was in api.ts (it is not, but good practice)
+            // Actually it is in api.ts, so I need to import it at the top.
+            import("@/lib/api").then(({ sendLocation }) => {
+              sendLocation(latitude, longitude);
+            });
+          },
+          (error) => {
+            console.error("Error getting location:", error);
+          }
+        );
+      }
     } catch (error) {
       console.error(error);
       toast({
@@ -47,11 +64,11 @@ const Hero = () => {
     <section className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden">
       {/* Background glow */}
       <div className="absolute inset-0 bg-gradient-glow pointer-events-none" />
-      
+
       {/* Floating orbs */}
       <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }} />
-      
+
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8 animate-pulse-glow">
