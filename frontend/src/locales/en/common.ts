@@ -135,5 +135,90 @@ export const common = {
     title: "Oops! Page not found",
     back: "Return to Home",
   },
+  safety: {
+    title: "Noise Safety Tips",
+    description: "Stay safe by limiting exposure and using protection around common everyday noise sources.",
+    categories: {
+      traffic: {
+        title: "🚗 Traffic Noise",
+        level: "Typical level: 65–85 dB",
+        tips: {
+          t1: "🚪 Close windows during peak traffic hours.",
+          t2: "🎧 Use noise-cancelling headphones if exposed for long durations.",
+          t3: "🛌 Avoid sleeping with windows facing main roads.",
+          t4: "🌿 Use curtains, plants, or sound-absorbing materials indoors.",
+          t5: "⏱ Take breaks from continuous exposure.",
+        },
+        warning: "Prolonged exposure may cause stress, fatigue, and sleep disturbance.",
+      },
+      construction: {
+        title: "🚧 Construction Noise",
+        level: "Typical level: 80–100 dB",
+        tips: {
+          t1: "🦻 Use earplugs or ear protection.",
+          t2: "⏰ Limit exposure time near construction zones.",
+          t3: "🏠 Keep doors and windows closed during construction hours.",
+          t4: "👶 Keep children and elderly away from high-noise areas.",
+          t5: "📅 Prefer scheduling outdoor activities during quieter hours.",
+        },
+        warning: "High risk of hearing damage with prolonged exposure.",
+      },
+      music: {
+        title: "🎵 Loud Music / Events",
+        level: "Typical level: 85–110 dB",
+        tips: {
+          t1: "🔉 Lower volume on personal devices.",
+          t2: "🎧 Follow the 60/60 rule (60% volume for 60 minutes).",
+          t3: "🚶 Move away from speakers at events.",
+          t4: "🛑 Take quiet breaks to rest your ears.",
+          t5: "👂 Ringing in ears is a sign to stop exposure.",
+        },
+        warning: "Can cause permanent hearing loss if ignored.",
+      },
+      crowd: {
+        title: "🗣️ Crowd / Public Gatherings",
+        level: "Typical level: 70–90 dB",
+        tips: {
+          t1: "📍 Move to less crowded zones when possible.",
+          t2: "😮‍💨 Take short breaks in quieter areas.",
+          t3: "👂 Use ear protection if exposure is long.",
+          t4: "🧠 Stay hydrated to reduce stress effects.",
+          t5: "⏳ Avoid prolonged exposure in enclosed spaces.",
+        },
+      },
+      sirens: {
+        title: "🚨 Honking / Sirens",
+        level: "Typical level: 90–120 dB",
+        tips: {
+          t1: "🚷 Avoid standing near busy intersections.",
+          t2: "🎧 Use ear protection if unavoidable.",
+          t3: "🏥 Sensitive zones should maintain silence.",
+          t4: "📢 Report unnecessary honking in silence zones.",
+          t5: "🧠 Repeated exposure can trigger anxiety and headaches.",
+        },
+      },
+      household: {
+        title: "🏠 Household / Neighborhood Noise",
+        level: "Typical level: 60–80 dB",
+        tips: {
+          t1: "🔕 Reduce device volume during night hours.",
+          t2: "🕘 Follow local quiet-hour rules.",
+          t3: "🧱 Use basic soundproofing such as curtains and rugs.",
+          t4: "🤝 Resolve issues peacefully before escalating.",
+          t5: "📞 Contact authorities if disturbance persists.",
+        },
+      },
+    },
+    emergency: {
+      title: "📞 Emergency & Support",
+      items: {
+        e1: "112 – National Emergency Helpline",
+        e2: "100 – Police (Noise disturbance complaints)",
+        e3: "108 – Emergency Medical Services",
+      },
+      emailLabel: "Email",
+      emailValue: "yashbavkar26@gmail.com",
+    },
+  },
 } as const;
 
