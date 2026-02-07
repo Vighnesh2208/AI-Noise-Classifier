@@ -81,7 +81,7 @@ The API requires an API key in the request header:
 
 Header Name: `x-api-key`
 
-Example Value: `YASH123456`
+Example Value: `VIGHNESH1822`
 
 You can change the API key inside api.py.
 
@@ -97,20 +97,20 @@ Then use /predict endpoint and upload a sound file.
 
 Make sure to send the header:
 
-`x-api-key: YASH123456`
+`x-api-key: VIGHNESH 1822`
 
 ✅ Using curl (Terminal)
 Mac/Linux
 ```python
 curl -X POST "http://127.0.0.1:8000/predict" \
-  -H "x-api-key: YASH123456" \
+  -H "x-api-key: VIGHNESH1822" \
   -F "file=@test.wav"
 ```
 
 Windows (CMD)
 ```python
 curl -X POST "http://127.0.0.1:8000/predict" ^
-  -H "x-api-key: YASH123456" ^
+  -H "x-api-key: VIGHNESH1822" ^
   -F "file=@test.wav"
   ```
 
