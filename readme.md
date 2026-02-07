@@ -171,6 +171,6 @@ Deploy online using Render/Railway + Netlify/Vercel frontend
 
 👨‍💻 Author
 
-Built by Yash 🔥
+Built by Vighnesh Patil 🔥
 
 
